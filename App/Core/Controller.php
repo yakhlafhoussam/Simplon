@@ -2,18 +2,21 @@
 
 namespace App\Core;
 
-class Controller {
+use eftec\bladeone\BladeOne;
 
-    protected function view($view, $data = []) {
-        extract($data);
+class Controller
+{
+    protected static $blade;
 
-        $viewFile = __DIR__ . '/../Views/pages/' . $view . '.php';
-        $notFound = $viewFile;
-        if (!file_exists($viewFile)) {
-            $viewFile = __DIR__ . '/../Views/pages/404.php';
+    public static function view(string $view, array $data = [])
+    {
+        if (self::$blade == null) {
+            $views = __DIR__ . '/../Views';
+
+            $cache = __DIR__ . '/../../Cache';
+
+            self::$blade = new BladeOne($views, $cache, BladeOne::MODE_AUTO);
         }
-        $layoutFile = __DIR__ . '/../Views/layout/layout.php';
-
-        include $layoutFile;
+        echo self::$blade->run($view, $data);
     }
 }

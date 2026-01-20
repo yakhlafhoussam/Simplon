@@ -3,7 +3,6 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use App\Core\Router;
-use App\Core\DataBase;
 
 session_start();
 
@@ -14,5 +13,7 @@ if (!isset($_SESSION['id'])) {
 } else {
     $router->get('/', 'DashboardController@index');
 }
+
+$router->post('/login', 'AuthController@login');
 
 $router->dispatch();
