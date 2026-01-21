@@ -11,6 +11,9 @@ $router = new Router();
 if (!isset($_SESSION['id'])) {
     $router->get('/', 'LoginController@index');
 } else {
+    if ($_SESSION['role'] == 'admin') {
+        $router->get('/users', 'UsersController@index');
+    }
     $router->get('/', 'HomeController@index');
 }
 
