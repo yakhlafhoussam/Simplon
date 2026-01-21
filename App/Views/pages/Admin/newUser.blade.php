@@ -92,9 +92,9 @@
                         required
                     >
                         <option value="">Select role</option>
-                        <option value="student">Student</option>
-                        <option value="teacher">Teacher</option>
-                        <option value="admin">Admin</option>
+                        <option value="student"><i class="fas fa-children text-sm"></i>Student</option>
+                        <option value="teacher"><i class="fas fa-person-chalkboard text-sm"></i>Teacher</option>
+                        <option value="admin"><i class="fas fa-user-tie text-sm"></i>Admin</option>
                     </select>
                 </div>
 

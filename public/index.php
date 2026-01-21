@@ -16,11 +16,12 @@ if (!isset($_SESSION['id'])) {
         $router->get('/class', 'ClassController@index');
         $router->get('/program', 'ProgramController@index');
         $router->get('/users/newuser', 'NewUserController@index');
+        $router->post('/users/newuser', 'NewUserController@addNew');
     }
     $router->get('/', 'HomeController@index');
 }
 
-$router->post('/login', 'AuthController@login');
+$router->post('/login', 'LoginController@login');
 $router->get('/logout', 'AuthController@logout');
 
 $router->dispatch();

@@ -2,7 +2,7 @@
 
 <?php $this->startSection('title', 'Home | SpiderWEB'); ?>
 
-<?php echo $this->runChild('templates.header'); ?>
+<?php echo $this->runChild('templates.Admin.header'); ?>
 
 <section class="w-[80%] h-full flex flex-col justify-center items-center bg-white">
  <h1>Hello in Home</h1>

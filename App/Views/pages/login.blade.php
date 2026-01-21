@@ -10,6 +10,7 @@
         </div>
         <div class="relative h-full w-1/2 flex flex-col justify-center items-center bg-green-500 rounded-r-xl">
             <img class="w-[70%] mb-10" src="assets/img/logo.png" alt="">
+            <p class="text-xl text-red-500 font-bold">{{ $msg }}</p>
             <form class="w-full" action="login" method="POST">
                 <div class="space-y-3 w-full flex flex-col items-center">
                     <div class="relative w-3/5 flex justify-center">

@@ -2,7 +2,7 @@
 
 @section('title', 'Home | SpiderWEB')
 
-@include('templates.header')
+@include('templates.Admin.header')
 
 <section class="w-[80%] h-full flex flex-col justify-center items-center bg-white">
     <h1>Hello in Home</h1>

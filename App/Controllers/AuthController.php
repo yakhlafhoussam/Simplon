@@ -12,14 +12,10 @@ class AuthController
         $password = $_POST['password'];
         if (empty($email) || empty($password)) {
             $errormsg = 'Please fill in all fields';
-            $_SESSION['errormsg'] = $errormsg;
-            header('location: /');
-            exit();
+            return $errormsg;
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errormsg = 'Invalid email';
-            $_SESSION['errormsg'] = $errormsg;
-            header('location: /');
-            exit();
+            return $errormsg;
         } else {
             $conn = Database::get_instance();
             $query = 'SELECT * FROM users WHERE email = :email';
@@ -30,15 +26,10 @@ class AuthController
             if ($user && password_verify($password, $user[0]['password'])) {
                 $_SESSION['id'] = $user[0]['id'];
                 $_SESSION['role'] = $user[0]['role'];
-                $errormsg = 'Correct login';
-                $_SESSION['errormsg'] = $errormsg;
-                header('location: /');
-                exit();
+                return 'succes';
             } else {
                 $errormsg = 'Incorrect email or password';
-                $_SESSION['errormsg'] = $errormsg;
-                header('location: /');
-                exit();
+                return $errormsg;
             }
         }
     }
