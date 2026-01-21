@@ -1,0 +1,10 @@
+<?php $_shouldextend[1]=1; ?>
+
+<?php $this->startSection('title', 'Home | SpiderWEB'); ?>
+
+<?php echo $this->runChild('templates.header'); ?>
+
+<section class="w-[80%] h-full flex flex-col justify-center items-center bg-white">
+ <h1>Hello in Home</h1>
+</section>
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layout.layout'); } ?>

@@ -11,9 +11,10 @@ $router = new Router();
 if (!isset($_SESSION['id'])) {
     $router->get('/', 'LoginController@index');
 } else {
-    $router->get('/', 'DashboardController@index');
+    $router->get('/', 'HomeController@index');
 }
 
 $router->post('/login', 'AuthController@login');
+$router->get('/logout', 'AuthController@logout');
 
 $router->dispatch();

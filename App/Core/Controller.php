@@ -10,6 +10,7 @@ class Controller
 
     public static function view(string $view, array $data = [])
     {
+        extract($data);
         if (self::$blade == null) {
             $views = __DIR__ . '/../Views';
 

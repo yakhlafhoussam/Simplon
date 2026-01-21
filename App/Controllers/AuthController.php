@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Core\Database;
-use PDO;
 
 class AuthController
 {
@@ -47,6 +46,7 @@ class AuthController
     {
         unset($_SESSION);
         session_destroy();
-        header('Location: /');
+        header('location: /');
+        exit();
     }
 }
