@@ -13,6 +13,7 @@ if (!isset($_SESSION['id'])) {
 } else {
     if ($_SESSION['role'] == 'admin') {
         $router->get('/users', 'UsersController@index');
+        $router->get('/class', 'ClassController@index');
     }
     $router->get('/', 'HomeController@index');
 }

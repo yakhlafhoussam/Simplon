@@ -1,4 +1,4 @@
-<header class="w-[20%] h-full py-5 z-[9999] bg-green-100 relative">
+<header class="w-[15%] h-full py-5 z-[9999] bg-green-100 relative">
     <div class="border-b border-green-900 border-solid w-full flex justify-center items-center pb-2">
         <a href="/">
             <img class="w-40" src="assets/img/logo.png" alt="">
@@ -15,12 +15,12 @@
         </a>
     </div>
     <div class="w-full p-4">
-        <a href="/classes" class="{{ $head == 'classes' ? 'bg-green-400 text-green-900 w-full flex items-center gap-3 px-3 py-2 rounded-md transition font-medium' : 'hover:bg-green-200 text-gray-500 w-full flex items-center gap-3 px-3 py-2 rounded-md transition font-medium' }}">
+        <a href="/class" class="{{ $head == 'class' ? 'bg-green-400 text-green-900 w-full flex items-center gap-3 px-3 py-2 rounded-md transition font-medium' : 'hover:bg-green-200 text-gray-500 w-full flex items-center gap-3 px-3 py-2 rounded-md transition font-medium' }}">
             <i class="fas fa-school text-sm"></i> Class Management
         </a>
     </div>
     <div class="w-full p-4">
-        <a href="/programs" class="{{ $head == 'programs' ? 'bg-green-400 text-green-900 w-full flex items-center gap-3 px-3 py-2 rounded-md transition font-medium' : 'hover:bg-green-200 text-gray-500 w-full flex items-center gap-3 px-3 py-2 rounded-md transition font-medium' }}">
+        <a href="/program" class="{{ $head == 'program' ? 'bg-green-400 text-green-900 w-full flex items-center gap-3 px-3 py-2 rounded-md transition font-medium' : 'hover:bg-green-200 text-gray-500 w-full flex items-center gap-3 px-3 py-2 rounded-md transition font-medium' }}">
             <i class="fas fa-square-binary text-sm"></i> Program Management
         </a>
     </div>
