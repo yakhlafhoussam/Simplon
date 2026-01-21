@@ -1,10 +1,10 @@
 @extends('layout.layout')
 
-@section('title', 'Users Management | SpiderWEB')
+@section('title', 'Class Management | SpiderWEB')
 
 @include('templates.Admin.header')
 
-<section class="w-[80%] h-full flex flex-col bg-gray-50 p-6 gap-6">
+<section class="w-[85%] h-full flex flex-col bg-gray-50 p-6 gap-6">
 
     <!-- Header -->
     <div class="w-full flex justify-between items-center">
