@@ -1,12 +1,12 @@
 @extends('layout.layout')
 
-@section('title', 'Program Management | SpiderWEB')
+@section('title', 'New User | SpiderWEB')
 
 @include('templates.Admin.header')
 
-<section class="w-[80%] h-full flex justify-center items-start bg-gray-50 p-6">
+<section class="w-[85%] h-full flex justify-center items-center bg-gray-50 p-6">
 
-    <div class="w-full max-w-2xl bg-white rounded-lg shadow p-6">
+    <div class="w-full bg-white rounded-lg shadow p-6">
 
         <!-- Header -->
         <div class="mb-6">
@@ -15,7 +15,7 @@
         </div>
 
         <!-- Form -->
-        <form class="flex flex-col gap-5">
+        <form class="flex flex-col gap-5" action="/users/newuser" method="POST">
 
             <!-- First & Last Name -->
             <div class="grid grid-cols-2 gap-4">
@@ -46,32 +46,36 @@
                 </div>
             </div>
 
-            <!-- Email -->
-            <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">
-                    Email
-                </label>
-                <input 
-                    type="email" 
-                    name="email"
-                    placeholder="example@mail.com"
-                    class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
-                    required
-                >
-            </div>
+            <div class="grid grid-cols-2 gap-4">
 
-            <!-- Password -->
-            <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">
-                    Password
-                </label>
-                <input 
-                    type="password" 
-                    name="password"
-                    placeholder="Minimum 8 characters"
-                    class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
-                    required
-                >
+                <!-- Email -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">
+                        Email
+                    </label>
+                    <input 
+                        type="email" 
+                        name="email"
+                        placeholder="example@mail.com"
+                        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                        required
+                    >
+                </div>
+
+                <!-- Password -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">
+                        Password
+                    </label>
+                    <input 
+                        type="password" 
+                        name="password"
+                        placeholder="Minimum 8 characters"
+                        class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                        required
+                    >
+                </div>
+
             </div>
 
             <!-- Role & Class -->
@@ -127,12 +131,13 @@
 
             <!-- Actions -->
             <div class="flex justify-end gap-4 pt-4">
-                <button 
+                <a
+                    href="/users"
                     type="button"
                     class="px-4 py-2 rounded border text-gray-700 hover:bg-gray-100"
                 >
                     Cancel
-                </button>
+                </a>
 
                 <button 
                     type="submit"

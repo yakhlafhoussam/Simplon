@@ -15,6 +15,7 @@ if (!isset($_SESSION['id'])) {
         $router->get('/users', 'UsersController@index');
         $router->get('/class', 'ClassController@index');
         $router->get('/program', 'ProgramController@index');
+        $router->get('/users/newuser', 'NewUserController@index');
     }
     $router->get('/', 'HomeController@index');
 }

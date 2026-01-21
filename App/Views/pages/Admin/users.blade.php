@@ -13,11 +13,12 @@
             <p class="text-sm text-gray-500">Manage all platform users</p>
         </div>
 
-        <button 
+        <a 
+            href="/users/newuser"
             class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
         >
             + Add User
-        </button>
+        </a>
     </div>
 
     <!-- Search & Filter -->
