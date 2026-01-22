@@ -1,7 +1,7 @@
 <header class="w-[15%] h-full py-5 z-[9999] bg-green-100 relative">
  <div class="border-b border-green-900 border-solid w-full flex justify-center items-center pb-2">
  <a href="/">
- <img class="w-40" src="assets/img/logo.png" alt="">
+ <img class="w-40" src="assets/img/logo.png" onerror="this.onerror=null; this.src='/../assets/img/logo.png'" alt="">
  </a>
  </div>
  <div class="w-full p-4">

@@ -8,9 +8,15 @@ class UsersController extends Controller
 {
     public function index()
     {
+
         $data = [
             'head' => 'users',
         ];
         $this->view('pages.Admin.users', $data);
     }
 }
+
+
+/* repo sql */
+
+/* serv logic */

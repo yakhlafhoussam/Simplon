@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Core\Controller;
+use App\Controllers\AuthController;
 
 class NewUserController extends Controller
 {
@@ -15,15 +16,8 @@ class NewUserController extends Controller
     }
     public function addNew()
     {
-        $first = $_POST['first_name'];
-        $last = $_POST['last_name'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $role = $_POST['role'];
-        $class_id = $_POST['class_id'];
-        $data = [
-            'head' => 'users',
-        ];
+        $data = AuthController::signup();
+        $data['head'] = 'users';
         $this->view('pages.Admin.newUser', $data);
     }
 }

@@ -27,6 +27,7 @@
                         type="text" 
                         name="first_name"
                         placeholder="Enter first name"
+                        value="{{ $first }}"
                         class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                         required
                     >
@@ -40,6 +41,7 @@
                         type="text" 
                         name="last_name"
                         placeholder="Enter last name"
+                        value="{{ $last }}"
                         class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                         required
                     >
@@ -57,6 +59,7 @@
                         type="email" 
                         name="email"
                         placeholder="example@mail.com"
+                        value="{{ $email }}"
                         class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                         required
                     >
@@ -71,6 +74,7 @@
                         type="password" 
                         name="password"
                         placeholder="Minimum 8 characters"
+                        value="{{ $password }}"
                         class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
                         required
                     >
@@ -128,6 +132,16 @@
                     class="w-full bg-gray-100 border rounded px-3 py-2 text-gray-500"
                 >
             </div>
+
+            <!-- Message -->
+
+            @isset($errormsg)
+                <p class="text-red-500 font-bold">{{ $errormsg }}</p>
+            @endisset
+
+            @isset($msg)
+                <p class="text-green-500 font-bold">{{ $msg }}</p>
+            @endisset
 
             <!-- Actions -->
             <div class="flex justify-end gap-4 pt-4">

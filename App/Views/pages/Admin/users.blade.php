@@ -43,12 +43,12 @@
         <table class="w-full border-collapse">
             <thead>
                 <tr class="bg-green-100 text-left text-sm">
-                    <th class="p-3 border">ID</th>
-                    <th class="p-3 border">Name</th>
-                    <th class="p-3 border">Email</th>
-                    <th class="p-3 border">Role</th>
-                    <th class="p-3 border">Status</th>
-                    <th class="p-3 border">Actions</th>
+                    <th class="p-3 border"><i class="fas fa-fingerprint text-sm"></i> ID</th>
+                    <th class="p-3 border"><i class="fas fa-address-card text-sm"></i> Full Name</th>
+                    <th class="p-3 border"><i class="fas fa-envelope text-sm"></i> Email</th>
+                    <th class="p-3 border"><i class="fas fa-dice-five text-sm"></i> Role</th>
+                    <th class="p-3 border"><i class="fas fa-lock text-sm"></i> Status</th>
+                    <th class="p-3 border"><i class="fas fa-circle-exclamation text-sm"></i> Actions</th>
                 </tr>
             </thead>
 
@@ -57,20 +57,22 @@
                     <td class="p-3 border">1</td>
                     <td class="p-3 border">Houssam</td>
                     <td class="p-3 border">houssam@mail.com</td>
-                    <td class="p-3 border">Student</td>
                     <td class="p-3 border">
-                        <span class="px-2 py-1 text-xs rounded bg-green-100 text-green-700">
-                            Active
+                        <span class="inline-flex items-center px-2 py-1 rounded-full text-sm font-medium bg-blue-500 text-white">
+                            <i class="fas fa-children mr-1 text-sm"></i><span>Student</span>
                         </span>
                     </td>
-                    <td class="p-3 border flex gap-3">
+                    <td class="p-3 border">
+                        <span class="inline-flex items-center px-2 py-1 rounded-full text-sm font-medium bg-green-500 text-white">
+                            <i class="fas fa-circle-check mr-1 text-sm"></i><span>Active</span>
+                        </span>
+                    </td>
+                    <td class="p-4 border flex gap-3">
                         <button class="text-green-700 hover:underline">View</button>
                         <button class="text-green-700 hover:underline">Edit</button>
-                        <button class="text-red-600 hover:underline">Delete</button>
+                        <button class="text-red-600 hover:underline">Lock</button>
                     </td>
                 </tr>
-
-                <!-- More users -->
             </tbody>
         </table>
 

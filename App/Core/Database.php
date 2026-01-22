@@ -39,6 +39,5 @@ class DataBase {
             $result = $stmt->fetchAll();
             return $result;
         }
-        return $status;
     }
 }
