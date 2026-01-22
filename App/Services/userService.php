@@ -6,6 +6,13 @@ use App\Repositories\userRepositorie;
 
 class userService
 {
+    private $repo;
+
+    public function __construct()
+    {
+        $this->repo = new userRepositorie();
+    }
+
     public function login($email, $password)
     {
         if (empty($email) || empty($password)) {
@@ -15,8 +22,7 @@ class userService
             $errormsg = 'Invalid email';
             return $errormsg;
         }
-        $repo = new userRepositorie();
-        $result = $repo->login($email, $password);
+        $result = $this->repo->login($email, $password);
         if ($result && password_verify($password, $result[0]['password'])) {
             $_SESSION['id'] = $result[0]['id'];
             $_SESSION['role'] = $result[0]['role'];
@@ -27,6 +33,7 @@ class userService
             return $errormsg;
         }
     }
+
     public function signup($data)
     {
         if (empty($data['first']) || empty($data['last']) || empty($data['email']) || empty($data['password']) || empty($data['role'])) {
@@ -36,14 +43,19 @@ class userService
             $errormsg = 'Invalid email';
             return $errormsg;
         }
-        $repo = new userRepositorie();
-        $result = $repo->login($data['email']);
+        $result = $this->repo->login($data['email']);
         if (count($result) > 0) {
             $errormsg = 'Email already registered';
             return $errormsg;
         } else {
-            $repo->signup($data);
+            $this->repo->signup($data);
             return 'succes';
         }
+    }
+
+    public function getAllUsers()
+    {
+        $result = $this->repo->getAllUsers();
+        return $result;
     }
 }

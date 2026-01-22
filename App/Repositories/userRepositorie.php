@@ -16,6 +16,7 @@ class userRepositorie
         $user = $conn->query($query, $params);
         return $user;
     }
+
     public function signup($data)
     {
         $conn = Database::get_instance();
@@ -29,5 +30,13 @@ class userRepositorie
             ':class_id' => $data['class_id'] ?? NULL
         ];
         $conn->query($query, $params);
+    }
+
+    public function getAllUsers()
+    {
+        $conn = Database::get_instance();
+        $query = 'SELECT * FROM users';
+        $user = $conn->query($query);
+        return $user;
     }
 }

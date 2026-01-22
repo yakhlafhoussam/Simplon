@@ -52,15 +52,28 @@
                 </tr>
             </thead>
 
-            <tbody class="text-sm">
+            @foreach ($users as $user)
+                <tbody class="text-sm">
                 <tr class="hover:bg-green-50">
-                    <td class="p-3 border">1</td>
-                    <td class="p-3 border">Houssam</td>
-                    <td class="p-3 border">houssam@mail.com</td>
+                    <td class="p-3 border">{{ $user['id'] }}</td>
+                    <td class="p-3 border">{{ $user['first_name'] . " " . $user['last_name']}}</td>
+                    <td class="p-3 border">{{ $user['email'] }}</td>
                     <td class="p-3 border">
-                        <span class="inline-flex items-center px-2 py-1 rounded-full text-sm font-medium bg-blue-500 text-white">
-                            <i class="fas fa-children mr-1 text-sm"></i><span>Student</span>
-                        </span>
+                        @if ($user['role'] == 'admin')
+                            <span class="inline-flex items-center px-2 py-1 rounded-full text-sm font-medium bg-red-500 text-white">
+                                <i class="fas fa-user-tie mr-1 text-sm"></i><span>{{ ucfirst($user['role']) }}</span>
+                            </span>
+                        @else
+                        @if ($user['role'] == 'teacher')
+                            <span class="inline-flex items-center px-2 py-1 rounded-full text-sm font-medium bg-yellow-500 text-white">
+                                <i class="fas fa-person-chalkboard mr-1 text-sm"></i><span>{{ ucfirst($user['role']) }}</span>
+                            </span>
+                        @else
+                            <span class="inline-flex items-center px-2 py-1 rounded-full text-sm font-medium bg-blue-500 text-white">
+                                <i class="fas fa-children mr-1 text-sm"></i><span>{{ ucfirst($user['role']) }}</span>
+                            </span>
+                        @endif 
+                        @endif
                     </td>
                     <td class="p-3 border">
                         <span class="inline-flex items-center px-2 py-1 rounded-full text-sm font-medium bg-green-500 text-white">
@@ -68,16 +81,15 @@
                         </span>
                     </td>
                     <td class="p-4 border flex gap-3">
-                        <button class="text-green-700 hover:underline">View</button>
-                        <button class="text-green-700 hover:underline">Edit</button>
+                        <a href='user/viewuser?id={{ $user['id'] }}' class="text-green-700 hover:underline">View</a>
                         <button class="text-red-600 hover:underline">Lock</button>
                     </td>
                 </tr>
             </tbody>
+            @endforeach
+
         </table>
 
     </div>
 
 </section>
-
-
