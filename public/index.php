@@ -19,6 +19,7 @@ if (!isset($_SESSION['id'])) {
         $router->get('/users/viewuser', 'ViewUserController@index');
         $router->get('/class/newclass', 'NewClassController@index');
         $router->post('/users/newuser', 'NewUserController@addNew');
+        $router->post('/class/newclass', 'NewClassController@addnew');
     }
     $router->get('/', 'HomeController@index');
 }

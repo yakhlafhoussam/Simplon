@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Core;
+
 use PDO;
 use PDOException;
 
-class DataBase {
+class DataBase
+{
     private $conn;
     private static $instance;
     private function __construct()
@@ -25,17 +27,27 @@ class DataBase {
             die("Database connection failed: " . $e->getMessage());
         }
     }
-    public static function get_instance(){
-        if(self::$instance == null){
+    public static function get_instance()
+    {
+        if (self::$instance == null) {
             self::$instance = new self();
         }
         return self::$instance;
     }
 
-    public function query($query,$params=[]){
+    public function insertAndGetId($query, $params = [])
+    {
         $stmt = $this->conn->prepare($query);
-        $status = $stmt->execute($params);
-        if(str_starts_with(strtolower(trim($query)),'select')){
+        $stmt->execute($params);
+        return $stmt->fetchColumn();
+    }
+
+
+    public function query($query, $params = [])
+    {
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute($params);
+        if (str_starts_with(strtolower(trim($query)), 'select')) {
             $result = $stmt->fetchAll();
             return $result;
         }

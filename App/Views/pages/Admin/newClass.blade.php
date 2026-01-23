@@ -1,0 +1,88 @@
+@extends('layout.layout')
+
+@section('title', 'New User | SpiderWEB')
+
+@include('templates.Admin.header')
+
+<section class="w-[85%] h-full flex justify-center items-center bg-gray-50 py-10">
+
+    <div class="w-full max-w-xl bg-white rounded-xl shadow-md p-8">
+
+        <h2 class="text-2xl font-semibold text-green-700 mb-6">
+            Add New Class
+        </h2>
+
+        <form class="space-y-6" action="/class/newclass" method="POST">
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">
+                    Class Name
+                </label>
+                <input 
+                    type="text" 
+                    name="name"
+                    placeholder="e.g. Class A"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                >
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">
+                    School Year
+                </label>
+                <input 
+                    type="text" 
+                    name="school_year"
+                    placeholder="e.g. 2024 / 2025"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                >
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">
+                    Main Teacher
+                </label>
+                <select 
+                    name="teacher_id"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                >
+                    <option value="">Select a teacher</option>
+                    @foreach ($teacher as $one)
+                        <option value="{{ $one['id'] }}">{{ $one['first_name'] . ' ' . $one['last_name'] }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <!-- Message -->
+
+            @isset($errormsg)
+                <p class="text-red-500 font-bold">{{ $errormsg }}</p>
+            @endisset
+
+            @isset($msg)
+                <p class="text-green-500 font-bold">{{ $msg }}</p>
+            @endisset
+
+            <div class="flex justify-end space-x-4 pt-4">
+
+                <button 
+                    type="reset"
+                    class="px-5 py-2 rounded-lg border text-gray-600 hover:bg-gray-100"
+                >
+                    Cancel
+                </button>
+
+                <button 
+                    type="submit"
+                    class="px-6 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 transition"
+                >
+                    Create Class
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>

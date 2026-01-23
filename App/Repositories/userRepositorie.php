@@ -39,6 +39,7 @@ class userRepositorie
         $user = $conn->query($query);
         return $user;
     }
+
     public function getUserInfo($id)
     {
         $conn = Database::get_instance();
@@ -83,6 +84,14 @@ class userRepositorie
             ':id' => $id
         ];
         $user = $conn->query($query, $params);
+        return $user;
+    }
+
+    public function getAllTeacher()
+    {
+        $conn = Database::get_instance();
+        $query = "SELECT * FROM users WHERE role = 'teacher'";
+        $user = $conn->query($query);
         return $user;
     }
 }
