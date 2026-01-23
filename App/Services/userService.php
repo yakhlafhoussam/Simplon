@@ -58,4 +58,9 @@ class userService
         $result = $this->repo->getAllUsers();
         return $result;
     }
+    public function getUser($id)
+    {
+        $result = $this->repo->getUserInfo($id);
+        return $result;
+    }
 }

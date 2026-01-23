@@ -81,7 +81,7 @@
                         </span>
                     </td>
                     <td class="p-4 border flex gap-3">
-                        <a href='user/viewuser?id={{ $user['id'] }}' class="text-green-700 hover:underline">View</a>
+                        <a href='users/viewuser?id={{ $user['id'] }}' class="text-green-700 hover:underline">View</a>
                         <button class="text-red-600 hover:underline">Lock</button>
                     </td>
                 </tr>

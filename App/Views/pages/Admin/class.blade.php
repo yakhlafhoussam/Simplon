@@ -13,11 +13,12 @@
             <p class="text-sm text-gray-500">Manage all training classes</p>
         </div>
 
-        <button 
+        <a
+            href="class/newclass"
             class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
         >
             + Add Class
-        </button>
+        </a>
     </div>
 
     <!-- Search -->
@@ -60,7 +61,6 @@
                     </td>
                     <td class="p-3 border flex gap-3">
                         <button class="text-green-700 hover:underline">View</button>
-                        <button class="text-green-700 hover:underline">Edit</button>
                         <button class="text-red-600 hover:underline">Delete</button>
                     </td>
                 </tr>

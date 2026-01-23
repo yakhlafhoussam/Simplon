@@ -18,8 +18,3 @@ class UsersController extends Controller
         $this->view('pages.Admin.users', $data);
     }
 }
-
-
-/* repo sql */
-
-/* serv logic */
