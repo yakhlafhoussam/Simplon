@@ -13,21 +13,15 @@
             <p class="text-sm text-gray-500">Manage all training classes</p>
         </div>
 
-        <a
-            href="class/newclass"
-            class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
-        >
+        <a href="class/newclass" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
             + Add Class
         </a>
     </div>
 
     <!-- Search -->
     <div class="w-full flex gap-4">
-        <input 
-            type="text" 
-            placeholder="Search by class name..." 
-            class="flex-1 border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
-        >
+        <input type="text" placeholder="Search by class name..."
+            class="flex-1 border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
     </div>
 
     <!-- Classes Table -->
@@ -41,29 +35,25 @@
                     <th class="p-3 border">Year</th>
                     <th class="p-3 border">Students</th>
                     <th class="p-3 border">Trainer</th>
-                    <th class="p-3 border">Status</th>
                     <th class="p-3 border">Actions</th>
                 </tr>
             </thead>
 
             <tbody class="text-sm">
 
-                <tr class="hover:bg-green-50">
-                    <td class="p-3 border">1</td>
-                    <td class="p-3 border">Class A</td>
-                    <td class="p-3 border">2025</td>
-                    <td class="p-3 border">24</td>
-                    <td class="p-3 border">Mr. Ahmed</td>
-                    <td class="p-3 border">
-                        <span class="px-2 py-1 text-xs rounded bg-green-100 text-green-700">
-                            Active
-                        </span>
-                    </td>
-                    <td class="p-3 border flex gap-3">
-                        <button class="text-green-700 hover:underline">View</button>
-                        <button class="text-red-600 hover:underline">Delete</button>
-                    </td>
-                </tr>
+                @foreach ($class as $clas)
+                    <tr class="hover:bg-green-50">
+                        <td class="p-3 border">{{ $clas['class_id'] }}</td>
+                        <td class="p-3 border">{{ $clas['class_name'] }}</td>
+                        <td class="p-3 border">{{ $clas['school_year'] }}</td>
+                        <td class="p-3 border">{{ $clas['students_count'] }}</td>
+                        <td class="p-3 border">Mr. {{ $clas['trainer_name'] }}</td>
+                        <td class="p-3 border flex gap-3">
+                            <a href="class/viewclass?id={{ $clas['class_id'] }}" class="text-green-700 hover:underline">View</a>
+                            <button class="text-red-600 hover:underline">Delete</button>
+                        </td>
+                    </tr>
+                @endforeach
 
                 <!-- More classes -->
             </tbody>
@@ -72,6 +62,3 @@
     </div>
 
 </section>
-
-
-

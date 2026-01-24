@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('title', 'New User | SpiderWEB')
+@section('title', 'New Class | SpiderWEB')
 
 @include('templates.Admin.header')
 

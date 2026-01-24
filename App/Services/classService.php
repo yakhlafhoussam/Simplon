@@ -26,4 +26,28 @@ class classService
         $_POST = [];
         return 'succes';
     }
+
+    public function getAllClass()
+    {
+        $result = $this->repo->getAllClass();
+        return $result;
+    }
+
+    public function getClass($id)
+    {
+        $result = $this->repo->getClass($id);
+        return $result;
+    }
+
+    public function getStudent($id)
+    {
+        $result = $this->repo->getStudent($id);
+        return $result;
+    }
+
+    public function getSprint($id)
+    {
+        $result = $this->repo->getSprint($id);
+        return $result;
+    }
 }
